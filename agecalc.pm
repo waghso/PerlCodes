@@ -40,36 +40,35 @@ sub age_cal($){
 			  	#print "Date is $3 $2 $5($1)\nTime is $4\n";
 	}
 		#For the DOB of user
-		if($dob =~ /(\d+)[\-|\/](\d+)[\-|\/](\d+)/)
-		{
-				($ddate,$dmonth,$dyear)=($1,$2,$3);
-				#print "$1,$2,$3\n";
-				
-				if($ddate>$date){
-					$month--;		#Borrowing a month(i.e. 30 days) from $month
-					$date += 30;
-				}
-				my $cal_day = $date-$ddate;
-				
-				if($dmonth>$month){
-					$year--;		#Borrowing a year(i.e. 12 months) from $year
-					$month += 12;
-				}
-				my $cal_month = $month-$dmonth;
-				
-				if($dyear>$year){
-					#This block executed only if input year is greater than current year
-					print  "Are you really calculating your age? Seems you will born in future!\n";	
-				}
-				my $cal_year = $year-$dyear; 
-				#print"OK";
-				
-				return "Your age is $cal_year years $cal_month months $cal_day days\n";
-				
-		}
-		else
-		{ return "Enter the date in correct format";}
-	
+	if($dob =~ /(\d+)[\-|\/](\d+)[\-|\/](\d+)/)
+	{
+			($ddate,$dmonth,$dyear)=($1,$2,$3);
+			#print "$1,$2,$3\n";
+			
+			if($ddate>$date){
+				$month--;		#Borrowing a month(i.e. 30 days) from $month
+				$date += 30;
+			}
+			my $cal_day = $date-$ddate;
+			
+			if($dmonth>$month){
+				$year--;		#Borrowing a year(i.e. 12 months) from $year
+				$month += 12;
+			}
+			my $cal_month = $month-$dmonth;
+			
+			if($dyear>$year){
+				#This block executed only if input year is greater than current year
+				print  "Are you really calculating your age? Seems you will born in future!\n";	
+			}
+			my $cal_year = $year-$dyear; 
+			#print"OK";
+			
+			return "Your age is $cal_year years $cal_month months $cal_day days\n";
+			
+	}
+	else
+	{ return "Enter the date in correct format";}
 	
 }
 

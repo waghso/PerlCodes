@@ -24,5 +24,3 @@ print $cal_age;
 sleep 6;
 
 print "\nThanks for using Age Calculator!\n"
-#my $no = 2.431;
-#print int($no);

@@ -39,12 +39,11 @@ sub age_cal($){
 				$year = $5;
 			  	#print "Date is $3 $2 $5($1)\nTime is $4\n";
 	}
-		#For the DOB of user
+	#For the DOB of user
 	if($dob =~ /(\d+)[\-|\/](\d+)[\-|\/](\d+)/)
 	{
 			($ddate,$dmonth,$dyear)=($1,$2,$3);
-			#print "$1,$2,$3\n";
-			
+
 			if($ddate>$date){
 				$month--;		#Borrowing a month(i.e. 30 days) from $month
 				$date += 30;
@@ -62,36 +61,13 @@ sub age_cal($){
 				print  "Are you really calculating your age? Seems you will born in future!\n";	
 			}
 			my $cal_year = $year-$dyear; 
-			#print"OK";
-			
+
 			return "Your age is $cal_year years $cal_month months $cal_day days\n";
 			
 	}
 	else
 	{ return "Enter the date in correct format";}
 	
-}
-
-#Display Current Date
-sub timeprint {
-	my $time = scalar localtime;
-
-	#my $time = shift;
-
-	$time =~ s{(\w+)\s(\w+)\s(\d+)\s(\S+)\s(\d+)}
-			  {
-			  	my $day = $1;
-			  	my $month = $2;
-			  	my $date = $3;
-			  	my $clock = $4;
-			  	my $year = $5;
-			  	
-			  	return "Date is $day, $date $month $year\nTime in HH:MM:SS: format- $clock\n";
-			  	
-			  	#return "Time in HH:MM:SS: format- $clock\n";
-			  	
-			  }sgixe
-
 }
 
 #Display Current Date
